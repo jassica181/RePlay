@@ -24,7 +24,7 @@ def readData():
         print("please connect arduino")
         return False
     try:
-        ser = serial.Serial(port, 11250, timeout=0)
+        ser = serial.Serial(port, 115200, timeout=0)
         print("attempting to connect device")
         time.sleep(2)
         print("connected")
