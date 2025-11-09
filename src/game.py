@@ -1,6 +1,7 @@
 import pygame
 pygame.init()
 
+
 # --- Setup ---
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("My Game")
@@ -9,8 +10,8 @@ pygame.display.set_caption("My Game")
 background = pygame.image.load("images/background.png").convert()
 background = pygame.transform.scale(background, (800, 600))
 
-player = pygame.image.load("images/player_right.png").convert_alpha()  # use convert_alpha for transparency
-player = pygame.transform.scale(player, (96, 96))  # optional: resize player
+player = pygame.image.load("images/player_right.png").convert_alpha()  
+player = pygame.transform.scale(player, (96, 96)) 
 
 # --- Player starting position ---
 player_x = 100
