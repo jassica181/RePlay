@@ -1,35 +1,46 @@
 import pygame
 
+from dataRead import readData, readEmg
+
 pygame.init()
-# --- Setup ---
 screen = pygame.display.set_mode((800, 600))
-pygame.display.set_caption("My Game")
 
-# --- Load images ---
-background = pygame.image.load("../images/background.png").convert()
-background = pygame.transform.scale(background, (800, 600))
+ser = readData()  # connect ONCE here
 
-player = pygame.image.load("../images/player_right.png").convert_alpha()
-player = pygame.transform.scale(player, (96, 96))
-
-# --- Player starting position ---
 player_x = 100
 player_y = 400
+vel_y = 0
+gravity = 1
+threshold = 40  # pick a starting threshold then later we do calibration
 
-# --- Game loop ---
 running = True
+
 while running:
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    # Draw background
-    screen.blit(background, (0, 0))
+    val = readEmg(ser)
+    if val is not None:
+        if val > threshold:
+            vel_y = -15  # jump impulse
 
-    # Draw player
-    screen.blit(player, (player_x, player_y))
+    # physics step
+    vel_y += gravity
+    player_y += vel_y
 
-    # Update display
+    # floor clamp
+    if player_y > 400:
+        player_y = 400
+        vel_y = 0
+
+    screen.fill((0, 0, 0))
+    # draw background / player
+    # screen.blit(background,(0,0))
+    # screen.blit(player,(player_x,player_y))
+
     pygame.display.flip()
+    pygame.time.Clock().tick(60)
 
 pygame.quit()
