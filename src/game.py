@@ -26,9 +26,9 @@ heart2 = pygame.image.load("../img/Hearts2.png")
 heart1 = pygame.image.load("../img/Hearts1.png")
 heart0 = pygame.image.load("../img/Hearts0.png")
 
-health_images = [health0, health1, health2, health3]
+health_img = [health0, health1, health2, health3]
 
-heart_images = [heart3, heart2, heart1, heart0]
+heart_img = [heart3, heart2, heart1, heart0]
 
 # Load up the background image and scale it to the game window size
 background = pygame.image.load("../img/NewBackground.png")
