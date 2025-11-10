@@ -6,10 +6,10 @@ screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("My Game")
 
 # --- Load images ---
-background = pygame.image.load("images/background.png").convert()
+background = pygame.image.load("../images/background.png").convert()
 background = pygame.transform.scale(background, (800, 600))
 
-player = pygame.image.load("images/player_right.png").convert_alpha()
+player = pygame.image.load("../images/player_right.png").convert_alpha()
 player = pygame.transform.scale(player, (96, 96))
 
 # --- Player starting position ---
