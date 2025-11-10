@@ -4,11 +4,17 @@ RePlay is desgined to turn physical therapy for children into a motivating game 
 
 ## Execution Instructions
 Clone the repository:
+```
 % git clone https://github.com/YourUsername/RePlay.git
+```
 
 Install Dependencies:
+```
 % pip install python
-% pip install pygame 
+% pip install pygame
+```
 
 Navigate to the project directory and Run the game:
+```
 % python src/game.py
+```
