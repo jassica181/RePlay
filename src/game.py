@@ -16,32 +16,32 @@ tile_size = 50
 mango_count = 0
 sting_count = 0
 
-health0 = pygame.image.load("../images/Health0.png")
-health1 = pygame.image.load("../images/Health1.png")
-health2 = pygame.image.load("../images/Health2.png")
-health3 = pygame.image.load("../images/Health3.png")
+health0 = pygame.image.load("../img/Health0.png")
+health1 = pygame.image.load("../img/Health1.png")
+health2 = pygame.image.load("../img/Health2.png")
+health3 = pygame.image.load("../img/Health3.png")
 
-heart3 = pygame.image.load("../images/Hearts3.png")
-heart2 = pygame.image.load("../images/Hearts2.png")
-heart1 = pygame.image.load("../images/Hearts1.png")
-heart0 = pygame.image.load("../images/Hearts0.png")
+heart3 = pygame.image.load("../img/Hearts3.png")
+heart2 = pygame.image.load("../img/Hearts2.png")
+heart1 = pygame.image.load("../img/Hearts1.png")
+heart0 = pygame.image.load("../img/Hearts0.png")
 
 health_images = [health0, health1, health2, health3]
 
 heart_images = [heart3, heart2, heart1, heart0]
 
 # Load up the background image and scale it to the game window size
-background = pygame.image.load("../images/NewBackground.png")
+background = pygame.image.load("../img/NewBackground.png")
 background = pygame.transform.scale(background, (screen_width, screen_height))
 
 
 # create a player class
-# player = pygame.image.load("images/player_right.png").convert_alpha()
+# player = pygame.image.load("img/player_right.png").convert_alpha()
 # player = pygame.transform.scale(player, (96, 96))
 class Elephant:
     def __init__(self, x, y):
-        player_image_right = pygame.image.load("../images/ElephantRight.png")
-        player_image_left = pygame.image.load("../images/ElephantLeft.png")
+        player_image_right = pygame.image.load("../img/ElephantRight.png")
+        player_image_left = pygame.image.load("../img/ElephantLeft.png")
 
         self.img_right = pygame.transform.scale(player_image_right, (50, 50))
         self.img_left = pygame.transform.scale(player_image_left, (50, 50))
@@ -120,13 +120,13 @@ class Grid:
         self.world_list = []
 
         # load the different tiles
-        ground_tile = pygame.image.load("../images/GroundTile.png")
-        mango = pygame.image.load("../images/NewMango.png")
-        bee_right = pygame.image.load("../images/NewBeeRight.png")
-        bee_left = pygame.image.load("../images/NewerBeeLeft.png")
-        boarder = pygame.image.load("../images/NewBoarder.png")
-        door1 = pygame.image.load("../images/Door1.png")
-        door2 = pygame.image.load("../images/Door2.png")
+        ground_tile = pygame.image.load("../img/GroundTile.png")
+        mango = pygame.image.load("../img/NewMango.png")
+        bee_right = pygame.image.load("../img/NewBeeRight.png")
+        bee_left = pygame.image.load("../img/NewerBeeLeft.png")
+        boarder = pygame.image.load("../img/NewBoarder.png")
+        door1 = pygame.image.load("../img/Door1.png")
+        door2 = pygame.image.load("../img/Door2.png")
 
         row_count = 0
         for row in world_grid:
@@ -182,8 +182,8 @@ class Grid:
 class Bee(pygame.sprite.Sprite):
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
-        self.image_right = pygame.image.load("../images/NewBeeRight.png")
-        self.image_left = pygame.image.load("../images/NewerBeeLeft.png")
+        self.image_right = pygame.image.load("../img/NewBeeRight.png")
+        self.image_left = pygame.image.load("../img/NewerBeeLeft.png")
 
         self.image_right = pygame.transform.scale(self.image_right, (50, 50))
         self.image_left = pygame.transform.scale(self.image_left, (50, 50))
@@ -213,7 +213,7 @@ class Bee(pygame.sprite.Sprite):
 class Mango(pygame.sprite.Sprite):
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("../images/NewMango.png")
+        self.image = pygame.image.load("../img/NewMango.png")
         self.image = pygame.transform.scale(self.image, (50, 50))
 
         self.rect = self.image.get_rect()
@@ -224,7 +224,7 @@ class Mango(pygame.sprite.Sprite):
 class Exit(pygame.sprite.Sprite):
     def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("../images/Door2.png")
+        self.image = pygame.image.load("../img/Door2.png")
         self.image = pygame.transform.scale(self.image, (50, 50))
 
         self.rect = self.image.get_rect()
