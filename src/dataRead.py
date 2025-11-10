@@ -11,7 +11,7 @@ def findPort():
     print(ports)
     for port in ports:
         print(port.name)
-        if "Arduino" in port.name:
+        if "Arduino" in port.description:
             device = port.device
             return device
     print("No device found")
@@ -24,19 +24,27 @@ def readData():
         print("please connect arduino")
         return False
     try:
-        ser = serial.Serial(port, 115200, timeout=0)
+        ser = serial.Serial(port, 115200, timeout=1)
         print("attempting to connect device")
         time.sleep(2)
+        ser.reset_input_buffer()
         print("connected")
-        ser.open()  # open the port to listen
+        return ser
     except Exception as e:
         print(e)
 
 
 def readEmg(arduino):
     try:
-        line = arduino.readline().decode("utf-8").strip()
-        return int(line)
+        line = arduino.readline().decode("utf-8").strip().split(",")
+        return int(line[0], int(line[1]))
     except Exception as e:
         print(e)
     return None
+
+
+if __name__ == "__main__":
+    ser = readData()
+    while True:
+        value = readEmg(ser)
+        print(value)
