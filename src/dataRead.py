@@ -37,7 +37,9 @@ def readData():
 def readEmg(arduino):
     try:
         line = arduino.readline().decode("utf-8").strip().split(",")
-        return int(line[0], int(line[1]))
+        line[0] = int(line[0])
+        line[1] = int(line[1])
+        return line
     except Exception as e:
         print(e)
     return None
