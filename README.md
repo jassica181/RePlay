@@ -12,6 +12,7 @@ Install Dependencies:
 ```
 % pip install python
 % pip install pygame
+% pip install pyserial
 ```
 
 Navigate to the project directory and Run the game:
