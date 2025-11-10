@@ -3,6 +3,7 @@
 RePlay is desgined to turn physical therapy for children into a motivating game through vibrant pixel art designs. Players control a friendly elephant character who jumps across platforms, collects mangos, and avoids bees (enemies), allowing children to take small but meaningful steps toward recovery.
 
 ## Execution Instructions
+Have the BioAMP device connect!
 Clone the repository:
 ```
 % git clone https://github.com/YourUsername/RePlay.git
