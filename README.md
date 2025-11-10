@@ -20,3 +20,5 @@ Navigate to the project directory and Run the game:
 ```
 % python src/game.py
 ```
+## Presentation link
+https://www.canva.com/design/DAG4O3HMAv4/gaCdRbsL9uALnApj_Qhmqw/edit?utm_content=DAG4O3HMAv4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
