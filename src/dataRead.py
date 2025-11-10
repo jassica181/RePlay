@@ -11,7 +11,7 @@ def findPort():
     print(ports)
     for port in ports:
         print(port.name)
-        if "Arduino" in port.description:
+        if "Arduino" in port.description or "usbmodem" in port.name:
             device = port.device
             return device
     print("No device found")
@@ -22,7 +22,7 @@ def readData():
     port = findPort()
     if not port:
         print("please connect arduino")
-        return False
+        return None
     try:
         ser = serial.Serial(port, 115200, timeout=1)
         print("attempting to connect device")
