@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import pygame
 
 from dataRead import readData, readEmg
@@ -44,3 +45,5 @@ while running:
     pygame.time.Clock().tick(60)
 
 pygame.quit()
+=======
+>>>>>>> 88f415620e0697a1e5733e8ecf1268f54a4087dc
